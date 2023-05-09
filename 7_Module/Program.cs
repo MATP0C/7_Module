@@ -1,21 +1,22 @@
 ﻿using System;
 
-class ElectricEngine { }
+class Engine { }
+class CarPart { }
+class ElectricEngine: Engine { }
 
-class GasEngine { }
+class GasEngine: Engine { }
 
-class Battery { }
+class Battery: CarPart { }
 
-class Differential { }
+class Differential: CarPart { }
 
-class Wheel { }
+class Wheel: CarPart { }
 
-class Car<T1>
+class Car <TEngine> where TEngine : Engine
 {
-    public T1 Engine;
+    public TEngine Engine;
 
-    public virtual void ChangePart<T2>(T2 newPart)
+    public virtual void ChangePart<TPart>(TPart newPart) where TPart : CarPart
     {
-
     }
 }
