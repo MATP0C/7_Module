@@ -1,36 +1,21 @@
 ﻿using System;
 
-int num1 = -7;
-int num2 = 13;
-int num3 = -1;
-Console.WriteLine(num1.GetNegative());
-Console.WriteLine(num1.GetPositive());
-Console.WriteLine(num2.GetNegative());
-Console.WriteLine(num2.GetPositive());
-Console.WriteLine(num3.GetNegative());
-Console.WriteLine(num3.GetPositive());
-static class IntExtension
+class ElectricEngine { }
+
+class GasEngine { }
+
+class Battery { }
+
+class Differential { }
+
+class Wheel { }
+
+class Car<T1>
 {
-    public static int GetNegative(this int number)
+    public T1 Engine;
+
+    public virtual void ChangePart<T2>(T2 newPart)
     {
-        if(number > 0)
-        {
-            return - number;
-        }
-        else
-        {
-            return number;
-        }
-    }
-    public static int GetPositive(this int number)
-    {
-        if(number < 0)
-        {
-            return -number;
-        }
-        else
-        {
-            return number;
-        }
+
     }
 }
